@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Detran</title>
+</head>
+<body>
+
+    
+        
+            
+                <h1>Sistema de multas</h1>
+                velocidade do carro : <input type="Number" name="txt" id="txt"> km/h
+                <input type="button" value="verificar" onclick="calcular()">
+                <div id="res"></div>
+    
+        
+
+        
+            <h1>Sistema de nacionalidade</h1>
+            Nacionalidade <input type="text" name="nac" id="nac">
+            <input type="button" value="verificar" onclick="ver()">
+            <div id = "pessoa"></div>
+            <div id ="agr"></div>
+        
+
+       
+            <h1>Sistema de idades</h1>
+            Idade <input type="Number" name="idade" id ="idade"> anos
+            <input type="button" value="verificar" onclick="calcidade()">
+            <div id="respostaidade"></div>
+        
+    
+
+
+    <script>
+
+
+        function calcular(){
+            var txt = window.document.getElementById(`txt`)
+            var res = window.document.getElementById(`res`)
+            var vel = Number(txt.value)
+
+            res.innerHTML = `Sua velocidade atual é de ${vel}`
+
+            
+
+            if (vel > 70) {
+                res.innerHTML += `<p>Voce esta multado por exesso de velocidade!</p>` 
+
+            }
+
+
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança</p>`
+
+
+
+
+        }
+
+        function ver(){
+            var nac = window.document.getElementById(`nac`).value
+            var pessoa = window.document.getElementById(`pessoa`)
+
+           pessoa.innerHTML = `Sua nacionalidade é ${nac}`
+
+           var agr = window.document.getElementById(`agr`)
+           agr.innerHTML = `Sua nacionalidade é ${nac}`
+
+           if (nac != "Brasileiro") {
+               pessoa.innerHTML = `Voce é um estrangeiro. Retire-se`
+           } else {
+                pessoa.innerHTML = (`vc é Bem vindo`)
+           }
+
+        }
+
+
+        function calcidade(){
+            var idade = window.document.getElementById(`idade`)
+            var respostaidade = window.document.getElementById(`respostaidade`)
+            var result = Number(idade.value)
+
+            respostaidade.innerHTML = `Sua idade é ${result}`
+
+            if (result > 60) {
+                respostaidade.innerHTML = `Sua idade não permite o cadastro`
+
+            } else {
+                respostaidade.innerHTML = `Seja bem vindo`
+            }
+
+
+        }
+
+    </script>
+
+</body>
+</html>

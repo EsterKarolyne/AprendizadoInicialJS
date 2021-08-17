@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Agora vai</title>
+</head>
+<body>
+
+    
+
+ <div class="container">
+     <div class="div1" id="essa" onclick="clicar()" onmouseout="sair()">Aqui</div>
+     
+     <div class="div1" id="des" onclick="entrar()" onmouseout="sair()"> amem </div>
+ </div>
+
+<p id="texto" onclick="aqui()" >oi</p>
+
+<p class="pa" onclick="texto2()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos harum consequuntur, nulla libero quam dignissimos consequatur accusamus? Dicta vel ipsam illum vitae excepturi ut. Alias labore aperiam eos aliquam laborum?</p>
+
+
+<!-- calculadora -->
+
+<input type="number" id = "campo1"> x 
+<input type="number" id = "campo2"> =
+<input type="number" id = "campovalor">
+<button onclick="mult()">Multiplicar</button>
+
+<br>
+
+<input type="number" id = "campo11"> ÷
+<input type="number" id = "campo22"> = 
+<input type="number" id = "campovalorr">
+<button onclick="divisao()" >Divisão</button>
+
+
+
+    
+<script>
+
+
+// calculadora
+
+    function mult(){
+        var campo1 = window.document.getElementById('campo1')
+        var campo2 = window.document.getElementById('campo2')
+        var campo1 = Number(campo1.value)
+        var campo2 = Number(campo2.value)
+        var d = campo1 * campo2
+        console.log(d)
+        var campovalor = window.document.getElementById('campovalor')
+        campovalor.value = d
+
+
+    }
+
+
+    function divisao(){
+        var campo11 = window.document.getElementById('campo11')
+        var campo22 = window.document.getElementById('campo22')
+        var campo11 = Number(campo11.value)
+        var campo22 = Number(campo22.value)
+        var d = campo11 / campo22
+        var campovalorr = window.document.getElementById('campovalorr')
+        campovalorr.value = d
+
+    }
+
+
+
+// animação na div
+
+    function clicar(){
+        var a = window.document.getElementById('essa')
+        a.innerText = 'clicou'
+        a.style.background = 'green'
+    }
+
+    function sair() {
+        var a = window.document.getElementById('essa')
+            a.innerText = 'saiu'
+            a.style.background = 'rgb(99, 22, 99)'
+            
+        }
+
+    function entrar(){
+        var a = window.document.getElementById('des')
+        a.innerText = 'agora'
+        a.style.background = 'blue'
+    }
+
+    function sair() {
+        var a = window.document.getElementById('des')
+            a.innerText = 'saiu'
+            a.style.background = 'rgb(99, 22, 99)'
+            
+        }
+
+    function aqui (){
+        var a = window.document.getElementById('texto')
+        a.innerText = 'tudo bem?'
+    }
+
+    function texto2 (){
+        var a = window.document.getElementsByClassName('pa')
+        a[0].innerText = 'tudo bem'
+        a[0].style.color = 'blue'
+    
+    }
+
+</script>
+
+
+</body>
+</html>
